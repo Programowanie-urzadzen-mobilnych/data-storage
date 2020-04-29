@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "893710860015",
+    "firebase_url": "https://smart-river-23df4.firebaseio.com",
+    "project_id": "smart-river-23df4",
+    "storage_bucket": "smart-river-23df4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893710860015:android:96bbbb63d3339781eda51a",
+        "android_client_info": {
+          "package_name": "pl.grupa33inf.ssi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893710860015-jarvqecdfvhhij8e7akts2e74t7bghdm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmktmhDm5pDbjQg6pAjkscSvNKUdoCTjI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893710860015-jarvqecdfvhhij8e7akts2e74t7bghdm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893710860015:android:1c257f599d502204eda51a",
+        "android_client_info": {
+          "package_name": "pl.grupa33inf.ssi.data_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893710860015-jarvqecdfvhhij8e7akts2e74t7bghdm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmktmhDm5pDbjQg6pAjkscSvNKUdoCTjI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893710860015-jarvqecdfvhhij8e7akts2e74t7bghdm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

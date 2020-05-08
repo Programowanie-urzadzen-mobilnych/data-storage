@@ -11,7 +11,6 @@ import pl.grupa33inf.ssi.data_store.api.Result;
 
 class INodeDataStoreImpl implements INodeDataStore {
 
-
     @Override
     public NodeVariable readVariable(UUID deviceUUID, String variableName) {
         return null;

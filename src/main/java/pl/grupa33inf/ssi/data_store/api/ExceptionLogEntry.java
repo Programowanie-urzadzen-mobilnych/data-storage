@@ -17,6 +17,4 @@ public class ExceptionLogEntry extends LogEntry {
      * Dodatkowe informacje o zdażeniu (np. podłączony węzeł)
      */
     private String additionalData;
-
-
 }

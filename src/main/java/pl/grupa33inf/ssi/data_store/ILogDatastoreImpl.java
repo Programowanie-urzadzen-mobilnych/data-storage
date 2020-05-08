@@ -10,7 +10,6 @@ import pl.grupa33inf.ssi.data_store.api.LogSaveResult;
 class ILogDatastoreImpl implements ILogDatastore {
     @Override
     public <T extends LogEntry> LogSaveResult<T> save(T entry) {
-
         return null;
     }
 }

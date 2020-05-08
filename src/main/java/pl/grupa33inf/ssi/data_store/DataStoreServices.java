@@ -7,6 +7,7 @@ import pl.grupa33inf.ssi.data_store.api.INodeDataStore;
 
 public final class DataStoreServices {
     private static DataStoreServices instance = null;
+
     @Getter
     private ILogDatastore logDatastore;
     @Getter
@@ -15,7 +16,6 @@ public final class DataStoreServices {
     private DataStoreServices() {
         logDatastore = new ILogDatastoreImpl();
         nodeDataStore = new INodeDataStoreImpl();
-
     }
 
     public static DataStoreServices getInstance() {

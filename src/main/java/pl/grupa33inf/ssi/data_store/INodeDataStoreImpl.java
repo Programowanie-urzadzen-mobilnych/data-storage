@@ -1,15 +1,19 @@
 package pl.grupa33inf.ssi.data_store;
 
+import android.util.Log;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import lombok.NoArgsConstructor;
 import pl.grupa33inf.ssi.data_store.api.INodeDataStore;
 import pl.grupa33inf.ssi.data_store.api.NodeVariable;
 import pl.grupa33inf.ssi.data_store.api.Result;
 
-class INodeDataStoreImpl implements INodeDataStore {
+@NoArgsConstructor
+public class INodeDataStoreImpl implements INodeDataStore {
 
     @Override
     public NodeVariable readVariable(UUID deviceUUID, String variableName) {
@@ -33,6 +37,7 @@ class INodeDataStoreImpl implements INodeDataStore {
 
     @Override
     public Result writeVariable(UUID deviceUUID, String variableName, String value) {
+        Log.d("INodeDataStore", String.format("%s, %s, %s", deviceUUID.toString(), variableName, value));
         return Result.OK;
     }
 

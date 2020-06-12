@@ -1,11 +1,7 @@
 package pl.grupa33inf.ssi.data_store;
 
-import android.annotation.TargetApi;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.util.Log;
-
-import androidx.annotation.RequiresApi;
 
 import com.google.gson.Gson;
 
@@ -16,7 +12,6 @@ import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Optional;
-import java.util.UUID;
 
 import pl.grupa33inf.ssi.data_store.api.NodeVariable;
 
@@ -50,7 +45,7 @@ public class ReadVariableTask extends AsyncTask<String, Void, Optional<NodeVaria
         }
 
         BufferedReader br = new BufferedReader((reader));
-        br.lines().forEachOrdered(line -> Log.d(TAG, "Got json: "+ line));
+        br.lines().forEachOrdered(line -> Log.d(TAG, "Got json: " + line));
         br.close();
 
         NodeVariable obj = gson.fromJson(reader, NodeVariable.class);
@@ -61,7 +56,7 @@ public class ReadVariableTask extends AsyncTask<String, Void, Optional<NodeVaria
     private boolean checkNullResult(Reader reader) throws IOException {
         char[] chars = new char[4];
 
-        reader.read(chars, 0 ,4);
+        reader.read(chars, 0, 4);
 
         if (new String(chars).equalsIgnoreCase("null")) {
             return true;

@@ -1,14 +1,10 @@
 package pl.grupa33inf.ssi.data_store;
 
 import android.os.AsyncTask;
-import android.os.Build;
 import android.util.Log;
-
-import androidx.annotation.RequiresApi;
 
 import com.google.android.gms.common.util.Strings;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,10 +12,8 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 import pl.grupa33inf.ssi.data_store.api.NodeVariable;
@@ -51,13 +45,13 @@ public class ReadVariablesTask extends AsyncTask<String, Void, Map<String, NodeV
         BufferedReader br = new BufferedReader((reader));
         String json = br.lines().collect(Collectors.joining());
 
-        if(Strings.isEmptyOrWhitespace(json) || json.equalsIgnoreCase("null")){
+        if (Strings.isEmptyOrWhitespace(json) || json.equalsIgnoreCase("null")) {
             Log.d(TAG, "getVariables: Got null input stream");
             return new HashMap<>();
         }
 
         Map<String, NodeVariable> map = gson.fromJson(json, Map.class);
-        if(map == null){
+        if (map == null) {
             Log.d(TAG, "getVariables: null map");
             return new HashMap<>();
         }

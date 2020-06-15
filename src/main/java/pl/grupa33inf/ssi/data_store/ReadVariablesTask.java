@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.google.android.gms.common.util.Strings;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.AbstractMap;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -50,11 +52,18 @@ public class ReadVariablesTask extends AsyncTask<String, Void, Map<String, NodeV
             return new HashMap<>();
         }
 
-        Map<String, NodeVariable> map = gson.fromJson(json, Map.class);
-        if (map == null) {
+        final Map<String, NodeVariableTemp> _map = gson.fromJson(json, new TypeToken<Map<String, NodeVariableTemp>>() {
+        }.getType());
+        if (_map == null) {
             Log.d(TAG, "getVariables: null map");
             return new HashMap<>();
         }
+        final Map<String, NodeVariable> map = new HashMap<>();
+
+        _map.entrySet().stream()
+                .map(entry -> new AbstractMap.SimpleEntry<>(entry.getKey(), entry.getValue().toProperValue()))
+                .forEach(entry -> map.put(entry.getKey(), entry.getValue()));
+
 
         Log.d(TAG, "map size" + map.size());
         return map;

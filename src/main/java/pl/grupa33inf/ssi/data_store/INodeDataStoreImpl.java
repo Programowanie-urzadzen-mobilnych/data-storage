@@ -16,7 +16,7 @@ import java.util.concurrent.ExecutionException;
 
 import lombok.NoArgsConstructor;
 import pl.grupa33inf.ssi.data_store.api.INodeDataStore;
-import pl.grupa33inf.ssi.data_store.api.NodeValue;
+import pl.grupa33inf.ssi.data_store.api.NodeValueWrite;
 import pl.grupa33inf.ssi.data_store.api.NodeVariable;
 
 @NoArgsConstructor
@@ -43,11 +43,9 @@ public class INodeDataStoreImpl implements INodeDataStore {
                 .child(deviceUUID.toString())
                 .child(variableName);
         variable.child("value").setValue(value);
-        variable.child("history").push().setValue(NodeValue.builder()
-                .value(value)
-                .timestamp(new Date())
-                .build()
-        );
+        variable.child("history").push().setValue(new NodeValueWrite(value, new Date().getTime()));
+
+
     }
 
     @Override
